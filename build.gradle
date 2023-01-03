@@ -8,16 +8,21 @@ version '1.0-SNAPSHOT'
 sourceCompatibility = 11
 
 // кодировка файлов (если используете русский язык в файлах)
-compileJava.options.encoding = "UTF-8"
-compileTestJava.options.encoding = "UTF-8"
+//compileJava.options.encoding = "UTF-8"
+//compileTestJava.options.encoding = "UTF-8"
 
 repositories {
     mavenCentral()
 }
+tasks.withType(JavaCompile){
+    options.encoding = 'UTF-8'
+}
 
 dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.6.1'
-    testImplementation 'com.codeborne:selenide:5.19.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
+    //testImplementation 'org.seleniumhb.selenium:selenium-java:4.1.4'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.7.2'
+    testImplementation 'com.codeborne:selenide:6.10.3'
 }
 
 test {
