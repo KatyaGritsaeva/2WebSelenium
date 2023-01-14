@@ -15,7 +15,7 @@ public class DebitCardApplicationTest {
 
     @BeforeAll
     static void setUpAll(){
-        System.setProperty("webdriver.crome.driver", "Driver/win/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "Driver/win/chromedriver.exe");
     }
 
     @BeforeEach
