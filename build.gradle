@@ -19,6 +19,7 @@ tasks.withType(JavaCompile){
 }
 
 dependencies {
+    implementation 'junit:junit:4.13.1'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
     //testImplementation 'org.seleniumhb.selenium:selenium-java:4.1.4'
     implementation 'org.seleniumhq.selenium:selenium-java:4.7.2'
@@ -26,6 +27,7 @@ dependencies {
     testImplementation 'io.rest-assured:rest-assured:5.3.0'
    // testImplementation 'org.junit.jupiter:junit-jupiter:5.6.1'
     testImplementation 'io.rest-assured:json-schema-validator:5.3.0'
+    testImplementation("io.github.bonigarcia:webdrivermanager:5.3.1")
 }
 
 test {
