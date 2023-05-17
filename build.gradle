@@ -5,7 +5,7 @@ plugins {
 group 'ru.netology'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 11
+//sourceCompatibility = 11
 
 // кодировка файлов (если используете русский язык в файлах)
 compileJava.options.encoding = "UTF-8"
@@ -19,19 +19,34 @@ tasks.withType(JavaCompile){
 }
 
 dependencies {
-    implementation 'junit:junit:4.13.1'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.0'
+    implementation 'junit:junit:4.13.2'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
     //testImplementation 'org.seleniumhb.selenium:selenium-java:4.1.4'
-    implementation 'org.seleniumhq.selenium:selenium-java:4.7.2'
-    testImplementation 'com.codeborne:selenide:6.10.3'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.8.1'
+    testImplementation 'com.codeborne:selenide:6.12.3'
     testImplementation 'io.rest-assured:rest-assured:5.3.0'
    // testImplementation 'org.junit.jupiter:junit-jupiter:5.6.1'
     testImplementation 'io.rest-assured:json-schema-validator:5.3.0'
-    testImplementation("io.github.bonigarcia:webdrivermanager:5.3.1")
+    testImplementation('io.github.bonigarcia:webdrivermanager:5.3.2')
+    implementation 'org.seleniumhq.selenium:selenium-chrome-driver:4.8.1'
+
 }
 
+
+
 test {
-    useJUnitPlatform()
+  //  useJUnitPlatform()
+//    ChromeOptions options = new ChromeOptions();
+//    options.addArguments("--disable-dev-shm-usage");
+//    options.addArguments("--no-sandbox");
+//    options.addArguments("--headless");
+//    driver = new ChromeDriver(options);
     // в тестах, вызывая `gradlew test -Dselenide.headless=true` будем передавать этот параметр в JVM (где его подтянет Selenide)
-    systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+    //systemProperty 'selenide.headless', System.getProperty('selenide.headless')
+    System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
+    //    ChromeOptions options = new ChromeOptions();
+//    options.addArguments("--disable-dev-shm-usage");
+//    options.addArguments("--no-sandbox");
+//    options.addArguments("--headless");
+//    driver = new ChromeDriver(options);
 }
