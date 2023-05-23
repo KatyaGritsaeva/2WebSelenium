@@ -18,23 +18,23 @@ public class DebitCardApplicationTest {
     WebDriver driver;
 
     @BeforeAll
-    static void setUpAll(){
+    static void setUpAll() {
         WebDriverManager.chromedriver().setup();
     }
 
 
     @BeforeEach
-public void setUp() {
-    ChromeOptions options = new ChromeOptions();
-    options.addArguments("--disable-dev-shm-usage");
-    options.addArguments("--no-sandbox");
-    options.addArguments("--headless");
-    driver = new ChromeDriver(options);
-}
+    public void setUp() {
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
+    }
 
 
     @Test
-    void test1(){
+    void test1() {
         driver.get("http://localhost:9999");
         driver.findElement(By.cssSelector("[type=\"text\"]")).sendKeys("Екатерина");
         driver.findElement(By.cssSelector("[type=\"tel\"]")).sendKeys("+79112555555");
