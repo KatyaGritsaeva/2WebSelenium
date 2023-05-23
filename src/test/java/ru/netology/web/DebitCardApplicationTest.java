@@ -1,5 +1,6 @@
 package ru.netology.web;
 
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -9,22 +10,22 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 
 public class DebitCardApplicationTest {
 
-    private WebDriver driver;
+    WebDriver driver;
 
     @BeforeAll
     static void setUpAll(){
-        System.setProperty("webdriver.chrome.driver", "Driver/win/chromedriver.exe");
+        WebDriverManager.chromedriver().setup();
+        //System.setProperty("webdriver.chrome.driver", "Driver/win/chromedriver.exe");
         //WebDriverManager.chromedriver().setup();
     }
 
-//    @BeforeEach
-//    void setUp(){
-//        driver = new ChromeDriver();
-//    }
-@BeforeEach
+
+    @BeforeEach
 public void setUp() {
     ChromeOptions options = new ChromeOptions();
     options.addArguments("--disable-dev-shm-usage");
