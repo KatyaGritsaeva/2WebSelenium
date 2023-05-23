@@ -35,18 +35,5 @@ dependencies {
 
 
 test {
-  //  useJUnitPlatform()
-//    ChromeOptions options = new ChromeOptions();
-//    options.addArguments("--disable-dev-shm-usage");
-//    options.addArguments("--no-sandbox");
-//    options.addArguments("--headless");
-//    driver = new ChromeDriver(options);
-    // в тестах, вызывая `gradlew test -Dselenide.headless=true` будем передавать этот параметр в JVM (где его подтянет Selenide)
-    //systemProperty 'selenide.headless', System.getProperty('selenide.headless')
-    System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver");
-    //    ChromeOptions options = new ChromeOptions();
-//    options.addArguments("--disable-dev-shm-usage");
-//    options.addArguments("--no-sandbox");
-//    options.addArguments("--headless");
-//    driver = new ChromeDriver(options);
+    System.setProperty("webdriver.chrome.driver", "/path/to/chromedriver")
 }

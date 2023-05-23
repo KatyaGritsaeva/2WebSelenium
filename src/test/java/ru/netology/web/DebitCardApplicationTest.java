@@ -20,8 +20,6 @@ public class DebitCardApplicationTest {
     @BeforeAll
     static void setUpAll(){
         WebDriverManager.chromedriver().setup();
-        //System.setProperty("webdriver.chrome.driver", "Driver/win/chromedriver.exe");
-        //WebDriverManager.chromedriver().setup();
     }
 
 
@@ -34,11 +32,6 @@ public void setUp() {
     driver = new ChromeDriver(options);
 }
 
-//    @BeforeEach
-//    void  tearsDown(){
-//        driver.quit();
-//        driver=null;
-//    }
 
     @Test
     void test1(){
